@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace KitchenRelaxedApplianceInfo {
 
-    public class RelaxedApplianceInfoMenu : Menu<PauseMenuAction> {
+    public class RelaxedApplianceInfoMenu : Menu<MenuAction> {
 
         public RelaxedApplianceInfoMenu(Transform container, ModuleList module_list) : base(container, module_list) { }
 
@@ -32,7 +32,7 @@ namespace KitchenRelaxedApplianceInfo {
         }
     }
 
-    [HarmonyPatch(typeof(AccessibilityMenu<PauseMenuAction>), "Setup")]
+    [HarmonyPatch(typeof(AccessibilityMenu<MenuAction>), "Setup")]
     class AccessibilityMenu_Patch {
 
         public static bool Prefix(MainMenu __instance) {
